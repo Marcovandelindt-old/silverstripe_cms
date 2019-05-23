@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <% base_tag %>
     <!-- Meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    $MetaTags(false)
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Marchoofd's CMS</title>
@@ -32,26 +33,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
+            <% loop $Menu(1) %>
+                <li class="nav-item">
+                    <a class="nav-link $LinkingMode" href="$Link" title="Go to the $Title page">$MenuTitle</a>
+                </li>
+            <% end_loop %>
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -60,6 +46,42 @@
     </div>
 </nav>
 <!-- /Navigation -->
+
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    $Breadcrumbs
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <div class="content">
+                <h1>$Title</h1>
+                $Content
+                <br />
+                $Form
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <% if $Menu(2) %>
+                <div class="sub-navigation">
+                    <h3>In this section</h3>
+                    <ul class="subnav">
+                        <% loop $Menu(2) %>
+                            <li class="nav-item"><a class="nav-link $LinkingMode" href="$Link">$MenuTitle</a></li>
+                        <% end_loop %>
+                    </ul>
+                </div>
+            <% end_if %>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

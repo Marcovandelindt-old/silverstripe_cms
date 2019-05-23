@@ -1,0 +1,10 @@
+nav .nav-link.current {
+    font-weight: bold;
+    border-bottom: 2px solid;
+}
+
+.sub-navigation {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
