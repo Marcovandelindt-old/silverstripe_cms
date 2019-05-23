@@ -1,0 +1,19 @@
+{
+  "name": "silverstripe/CMS",
+  "description": "Silverstripe CMS",
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Marco van de Lindt",
+      "email": "marcovandelindt@live.nl"
+    }
+  ],
+  "require": {
+    "silverstripe/recipe-cms": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "SilverStripe\\CMS\\": "src/"
+    }
+  }
+}
