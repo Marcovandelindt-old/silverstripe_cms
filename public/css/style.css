@@ -8,3 +8,18 @@ nav .nav-link.current {
     padding: 10px;
     border-radius: 5px;
 }
+
+.brochure-block {
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.blog-image {
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+
+.blog-image .blog-header {
+    border-radius: 5px;
+}
