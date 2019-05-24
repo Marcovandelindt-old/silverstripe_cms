@@ -13,8 +13,12 @@
                             <img src="http://placehold.it/766x515" class="card-img-top" alt="..." />
                             <div class="card-body">
                                <h5 class="card-title">$Title</h5>
-                                <i class="fas fa-calendar-alt"></i> 23-05-2019
-                                <p class="card-text">$Top.trimContent($Content)</p>
+                                <i class="fas fa-calendar-alt"></i> $Date.Nice
+                                <% if $Teaser %>
+                                    <p class="card-text">$Top.trimContent($Teaser)</p>
+                                <% else %>
+                                    <p clas="card-text">$Content.LimitCharacters(100)</p>
+                                <% end_if %>
                                 <a href="$Link" class="btn btn-secondary">Read more</a>
                             </div>
                         </div>
